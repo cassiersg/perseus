@@ -1,0 +1,23 @@
+[project]
+name = "tool"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3.0",
+    "pgmpy>=1.0.0",
+    "scipy>=1.15.3",
+    "tqdm>=4.67.1",
+    "verifmsi",
+    "rbackend",
+]
+
+[tool.uv.sources]
+verifmsi = { git = "https://github.com/quentin-meunier/VerifMSI", rev = "5aa54b0bfac7a4aaa8ceb4bd63065218db6381f5" }
+rbackend = { path = "./rbackend" }
+
+[tool.uv]
+required-environments = [
+    "sys_platform == 'darwin' and platform_machine == 'x86_64'",
+]
